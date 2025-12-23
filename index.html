@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vinest</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">VinestShop</div>
+    
+    <div class="cart-icon" id="cart-icon" aria-label="Shopping Cart" role="button" tabindex="0">
+      🛒
+      <div class="cart-badge" id="cart-badge" style="display:none;">0</div>
+    </div>
+  </header>
+
+  <section class="hero container">
+    <div class="hero-text">
+      <h1>WARUNG</h1> 
+      <h2>Pak Gilsen</h2>
+    </div>
+    <div class="hero-image">
+      <div class="circle-bg">
+        <img src="images/logo.jpeg" alt="Logo of Warkop Warung Kopi" onerror="this.src='https://placehold.co/300x400?text=Logo'"/>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-section container">
+    <div class="section-header">
+      <h2><Menu></Menu></h2>
+      <div class="search-wrapper">
+        <input type="text" id="search" placeholder="Search" aria-label="Search Products" />
+        <button id="search-btn" aria-label="Search">🔍</button>
+      </div>
+    </div>
+
+    <div class="products-grid" id="products-grid">
+      <div class="product-card">
+        <img src="images/nasi-goreng.jpeg" alt="Nasi Goreng" />
+        <h3>Nasi Goreng</h3>
+        <p>Price: Rp 20,000</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/mie-ayam.jpeg" alt="Mie Ayam" />
+        <h3>Mie Ayam</h3>
+        <p>Price: Rp 10,000</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/bakso.jpeg" alt="Bakso" />
+        <h3>Bakso</h3>
+        <p>Price: Rp 10,000</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/es-teh.jpeg" alt="Esteh" />
+        <h3>Esteh</h3>
+        <p>Price: Rp 3,000</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/kopi.jpeg" alt="Kopi" />
+        <h3>Kopi</h3>
+        <p>Price: Rp 5,000</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/bala-bala.jpeg" alt="Gorengan" />
+        <h3>Gorengan</h3>
+        <p>Price: Rp 1,000</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/nasi uduk.jpeg" alt="nasi-uduk" />
+        <h3>Nasi Uduk</h3>
+        <p>Price: Rp 5,000</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/ayam-geprek.jpeg" alt="ayam-geprek" />
+        <h3>Ayam Geprek</h3>
+        <p>Price: Rp 10,000</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/bebek-bakar.jpeg" alt="bebek-bakar" />
+        <h3>Bebek Bakar</h3>
+        <p>Price: Rp 8,000</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/tutug-oncom.jpeg" alt="tutug-oncom" />
+        <h3>Tutug Oncom</h3>
+        <p>Price: Rp 15,000</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div><div class="product-card">
+        <img src="images/seblak.jpeg" alt="seblak" />
+        <h3>Seblak</h3>
+        <p>Price: Rp 10,000</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/teh telang.jpeg" alt="Gorengan" />
+        <h3>Teh Telang</h3>
+        <p>Price: Rp 8,000</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <p id="no-results" style="display:none; text-align:center; margin-top:1rem; color:#e63946; font-weight:bold;">
+  Maaf, menu yang Anda pesan tidak tersedia.
+</p>
+
+  <div id="cart-modal" class="cart-modal hidden" role="dialog" aria-labelledby="cart-modal-title" aria-modal="true">
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <div class="cart-panel">
+        <header>
+            <h2 id="cart-modal-title">Pesanan Kamu</h2>
+            <button id="close-cart" aria-label="Close Cart">&times;</button>
+        </header>
+        <div id="cart-items"></div>
+        <div class="cart-summary">
+            <div>Total: <span id="cart-total">Rp 0</span></div>
+            <div class="cart-actions">
+                <button id="clear-cart" class="add-small" aria-label="Clear Cart">✕</button>
+                <button id="order-btn" class="btn-primary" aria-label="Place Order">Pesan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <footer class="site-footer">
+    <div class="footer-left">kasir </div>
+    <div class="footer-middle">
+      <div>CONTACT US</div>
+      <div>0899999999</div>
+    </div>
+    <div class="footer-right">
+      <div>SOCIAL MEDIA</div>
+      <div class="social-icons">
+        <span>🕎</span><span>📷</span><span>👍</span>
+      </div>
+    </div>
+  </footer>
+
+<div id="notFoundMessage" style="display:none; color:red; font-weight:bold;">
+    Menu yang dimaksud tidak tersedia
+</div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
